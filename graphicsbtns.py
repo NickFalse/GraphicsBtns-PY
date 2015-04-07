@@ -27,9 +27,14 @@ class button:
         p2 = Point(x2,y2)
         rec = Rectangle(p1, p2)
         rec.setFill(color)
+        self.rect = rec
         rec.draw(win)
         midx = (x2+x1)/2
         midy = (y2+y1)/2
         p3 = Point(midx, midy)
         title = Text(p3, self.name)
+        self.title = title
         title.draw(win)
+    def removeBtn(self):
+        self.title.undraw()
+        self.rect.undraw()
