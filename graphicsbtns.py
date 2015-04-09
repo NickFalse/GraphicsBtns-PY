@@ -11,12 +11,14 @@ class button:
         self.green = 0
         self.blue = 0
         self.key = "placeholdthatwillnevertriger"
-    def testBtn(self,p):
+    def testBtn(self,p,key=None):
         if p == None:
             p = Point(-42, -42)
+        if key == None:
+            key = 'dont error me'
         x = p.getX()
         y = p.getY()
-        if ((x>self.xmin)and(x<self.xmax)and(y>self.ymin)and(y<self.ymax)) or self.key == (self.wind.checkKey()):
+        if ((x>self.xmin)and(x<self.xmax)and(y>self.ymin)and(y<self.ymax)) or self.key == key:
             return 1
         else:
             return 0
