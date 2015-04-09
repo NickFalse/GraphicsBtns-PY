@@ -8,8 +8,8 @@ def createWindow(title,width,height):
     win.setCoords(0.0, 0.0, float(width), float(height))
     return win
 
-def addButton(name,x1,x2,y1,y2):
-    new_button = button(name,x1,x2,y1,y2)
+def addButton(win,name,x1,x2,y1,y2):
+    new_button = button(win,name,x1,x2,y1,y2)
     return new_button
     
 def main():
@@ -22,16 +22,16 @@ def main():
     y2 = 500
     offset = 100
     
-    b1 = button(win,"Quit",x1,x2,y1,y2)
+    b1 = addButton(win,"Quit",x1,x2,y1,y2)
     b1.setBtnColor(255,0,255)
     b1.drawBtn()
 
     
-    b2 = button(win,"Remove",x1,x2,y1+offset,y2+offset)
+    b2 = addButton(win,"Remove",x1,x2,y1+offset,y2+offset)
     b2.setBtnColor(0,255,0)
     b2.drawBtn()
 
-    b3 = button(win,"Color",x1+offset,x2+offset,y1,y2)
+    b3 = addButton(win,"Color",x1+offset,x2+offset,y1,y2)
     b3.setBtnColor(255,255,255)
     b3.drawBtn()
     

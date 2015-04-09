@@ -10,20 +10,22 @@ class button:
         self.red = 0
         self.green = 0
         self.blue = 0
+        self.key = "placeholdthatwillnevertriger"
     def testBtn(self,p):
-        try:
-            x = p.getX()
-            y = p.getY()
-            if (x>self.xmin)and(x<self.xmax)and(y>self.ymin)and(y<self.ymax):
-                return 1
-            else:
-                return 0
-        except:
+        if p == None:
+            p = Point(-42, -42)
+        x = p.getX()
+        y = p.getY()
+        if ((x>self.xmin)and(x<self.xmax)and(y>self.ymin)and(y<self.ymax)) or self.key == (self.wind.checkKey()):
+            return 1
+        else:
             return 0
     def setBtnColor(self, red, green, blue):
         self.red = red
         self.green = green
         self.blue = blue
+    def setKey(self, ky):
+        self.key = ky
     def drawBtn(self):
         x1 = float(self.xmin)
         x2 = float(self.xmax)
